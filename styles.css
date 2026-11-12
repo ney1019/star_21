@@ -19,7 +19,25 @@
   box-sizing: border-box;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
+/* Banner informativo para navegador interno de TikTok */
+.in-app-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--text-dark);
+  color: #ffffff;
+  font-size: 0.78rem;
+  text-align: center;
+  padding: 0.6rem 1rem;
+  z-index: 200;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  line-height: 1.35;
+}
 
+.in-app-banner strong {
+  color: #ff85b3;
+}
 body {
   background-color: var(--bg-main);
   color: var(--text-dark);

@@ -11,64 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 90 * index);
   });
 
-  // 2. Detección de navegador interno (TikTok, Instagram, Facebook) y sistema operativo
+  // 2. Mostrar guía solo si se abre dentro de TikTok / Instagram
   const ua = navigator.userAgent || navigator.vendor || window.opera;
   const isInApp = /TikTok|BytedanceWebview|musical_ly|Instagram|FBAN|FBAV/i.test(ua);
-  const isAndroid = /Android/i.test(ua);
-  const isIOS = /iPhone|iPad|iPod/i.test(ua);
+  const banner = document.getElementById('inAppBanner');
 
-  // 3. Forzar apertura en App Nativa / Navegador Externo
-  const socialLinks = document.querySelectorAll('a[data-app]');
+  if (isInApp && banner) {
+    banner.style.display = 'block';
+    document.body.style.paddingTop = '4.2rem';
+  }
 
-  socialLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const app = link.getAttribute('data-app');
-      const user = link.getAttribute('data-user');
-      const webUrl = link.getAttribute('href');
-
-      // Si estamos en Android (especialmente dentro de TikTok), usamos Android Intents
-      if (isAndroid) {
-        e.preventDefault();
-        let intentUrl = '';
-
-        if (app === 'instagram') {
-          intentUrl = `intent://instagram.com/_u/${user}/#Intent;package=com.instagram.android;scheme=https;S.browser_fallback_url=${encodeURIComponent(webUrl)};end`;
-        } else if (app === 'youtube') {
-          intentUrl = `intent://www.youtube.com/${user}#Intent;package=com.google.android.youtube;scheme=https;S.browser_fallback_url=${encodeURIComponent(webUrl)};end`;
-        } else if (app === 'facebook') {
-          const cleanUrl = webUrl.replace('https://', '');
-          intentUrl = `intent://${cleanUrl}#Intent;package=com.facebook.katana;scheme=https;S.browser_fallback_url=${encodeURIComponent(webUrl)};end`;
-        } else if (app === 'tiktok') {
-          intentUrl = `intent://www.tiktok.com/@${user}#Intent;package=com.zhiliaoapp.musically;scheme=https;S.browser_fallback_url=${encodeURIComponent(webUrl)};end`;
-        }
-
-        if (intentUrl) {
-          window.location.href = intentUrl;
-          return;
-        }
-      }
-
-      // Si estamos en iPhone dentro de un navegador interno, usamos URL Schemes
-      if (isIOS && isInApp) {
-        let appScheme = '';
-
-        if (app === 'instagram') appScheme = `instagram://user?username=${user}`;
-        if (app === 'youtube') appScheme = `youtube://www.youtube.com/${user}`;
-        if (app === 'facebook') appScheme = `fb://facewebmodal/f?href=${encodeURIComponent(webUrl)}`;
-
-        if (appScheme) {
-          e.preventDefault();
-          window.location.href = appScheme;
-          // Si no tiene la app instalada, abre el enlace web tras 800ms
-          setTimeout(() => {
-            window.location.href = webUrl;
-          }, 800);
-        }
-      }
-    });
-  });
-
-  // 4. Botón de compartir
+  // 3. Botón de compartir
   const shareBtn = document.getElementById('shareBtn');
   const toast = document.getElementById('toast');
 

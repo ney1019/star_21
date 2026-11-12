@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta property="og:title" content="👑 STAR | Tania Rodas • Enlaces Oficiales">
   <meta property="og:description" content="TEAM Los Ángeles White • Lives diarios, TikTok, Instagram, YouTube y Facebook.">
-  <meta property="og:image" content="https://TU-DOMINIO.vercel.app/img/index.jpg">
+  <meta property="og:image" content="https://star-21.vercel.app/img/img1.jpeg">
   <meta property="og:type" content="website">
   <title>👑 STAR | Tania Rodas • Enlaces Oficiales</title>
   <!-- Favicon usando la imagen principal -->
@@ -22,6 +22,11 @@
 </head>
 <body>
   <div class="bg-decoration"></div>
+
+  <!-- Aviso automático solo visible dentro de TikTok / Instagram -->
+  <div id="inAppBanner" class="in-app-banner" style="display: none;">
+    <span>💡 Para abrir directo en las apps, toca <strong>•••</strong> arriba y elige <strong>Abrir en el navegador</strong>.</span>
+  </div>
 
   <main class="container">
     <!-- Cabecera del Perfil -->
@@ -54,16 +59,16 @@
 
       <!-- Accesos rápidos superiores -->
       <div class="quick-socials">
-        <a href="https://www.tiktok.com/@tania.c.r.c" data-app="tiktok" data-user="tania.c.r.c" target="_blank" rel="noopener" aria-label="TikTok Principal">
+        <a href="https://www.tiktok.com/@tania.c.r.c" aria-label="TikTok Principal">
           <i class="fa-brands fa-tiktok"></i>
         </a>
-        <a href="https://www.instagram.com/tanyrodascueva" data-app="instagram" data-user="tanyrodascueva" target="_blank" rel="noopener" aria-label="Instagram">
+        <a href="https://www.instagram.com/tanyrodascueva" aria-label="Instagram">
           <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href="https://www.youtube.com/@TaniaRodas07" data-app="youtube" data-user="@TaniaRodas07" target="_blank" rel="noopener" aria-label="YouTube">
+        <a href="https://www.youtube.com/@TaniaRodas07" aria-label="YouTube">
           <i class="fa-brands fa-youtube"></i>
         </a>
-        <a href="https://www.facebook.com/share/1CJWYdQMf6/" data-app="facebook" target="_blank" rel="noopener" aria-label="Facebook">
+        <a href="https://www.facebook.com/share/1CJWYdQMf6/" aria-label="Facebook">
           <i class="fa-brands fa-facebook-f"></i>
         </a>
       </div>
@@ -72,7 +77,7 @@
     <!-- Tarjetas de Redes Sociales con Imágenes -->
     <section class="links-section">
       <!-- TikTok Principal -->
-      <a href="https://www.tiktok.com/@tania.c.r.c" data-app="tiktok" data-user="tania.c.r.c" target="_blank" rel="noopener" class="link-card featured">
+      <a href="https://www.tiktok.com/@tania.c.r.c" class="link-card featured">
         <div class="thumb-wrapper">
           <img src="img/tiktok.jpeg" alt="TikTok Principal" class="link-thumb">
           <span class="platform-badge tiktok"><i class="fa-brands fa-tiktok"></i></span>
@@ -85,20 +90,20 @@
       </a>
 
       <!-- TikTok Secundario -->
-      <a href="https://www.tiktok.com/@taniarodas07_" data-app="tiktok" data-user="taniarodas07_" target="_blank" rel="noopener" class="link-card">
+      <a href="https://www.tiktok.com/@taniarodas07_" class="link-card">
         <div class="thumb-wrapper">
           <img src="img/tiktok2.jpeg" alt="TikTok Secundario" class="link-thumb">
           <span class="platform-badge tiktok"><i class="fa-brands fa-tiktok"></i></span>
         </div>
         <div class="link-info">
-          <span class="link-title">TikTok  • @taniarodas07_</span>
+          <span class="link-title">TikTok • @taniarodas07_</span>
           <span class="link-subtitle">Clips extras y contenido exclusivo</span>
         </div>
         <i class="fa-solid fa-chevron-right arrow"></i>
       </a>
 
       <!-- Instagram -->
-      <a href="https://www.instagram.com/tanyrodascueva" data-app="instagram" data-user="tanyrodascueva" target="_blank" rel="noopener" class="link-card">
+      <a href="https://www.instagram.com/tanyrodascueva" class="link-card">
         <div class="thumb-wrapper">
           <img src="img/instagram.jpeg" alt="Instagram" class="link-thumb">
           <span class="platform-badge instagram"><i class="fa-brands fa-instagram"></i></span>
@@ -111,7 +116,7 @@
       </a>
 
       <!-- YouTube -->
-      <a href="https://www.youtube.com/@TaniaRodas07" data-app="youtube" data-user="@TaniaRodas07" target="_blank" rel="noopener" class="link-card">
+      <a href="https://www.youtube.com/@TaniaRodas07" class="link-card">
         <div class="thumb-wrapper">
           <img src="img/youtube.jpeg" alt="YouTube" class="link-thumb">
           <span class="platform-badge youtube"><i class="fa-brands fa-youtube"></i></span>
@@ -124,7 +129,7 @@
       </a>
 
       <!-- Facebook -->
-      <a href="https://www.facebook.com/share/1CJWYdQMf6/" data-app="facebook" target="_blank" rel="noopener" class="link-card">
+      <a href="https://www.facebook.com/share/1CJWYdQMf6/" class="link-card">
         <div class="thumb-wrapper">
           <img src="img/facebook.jpeg" alt="Facebook" class="link-thumb">
           <span class="platform-badge facebook"><i class="fa-brands fa-facebook-f"></i></span>
@@ -136,6 +141,7 @@
         <i class="fa-solid fa-chevron-right arrow"></i>
       </a>
     </section>
+
     <!-- Pie de página -->
     <footer class="footer">
       <button id="shareBtn" class="share-btn">
